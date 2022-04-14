@@ -11,8 +11,8 @@ import (
 
 	"github.com/ontio/ontology/common"
 	"github.com/polynetwork/bridge-common/chains/ont"
-	"github.com/polynetwork/bridge-common/util"
 	"github.com/polynetwork/bridge-common/log"
+	"github.com/polynetwork/bridge-common/util"
 	"github.com/polynetwork/bridge-common/wallet"
 )
 
@@ -225,8 +225,8 @@ func BindProxy(c *cli.Context) (err error) {
 	if err == nil {
 		log.Info("Will check after 10 seconds")
 		time.Sleep(10 * time.Second)
+		err = BindProxyCheck(c)
 	}
-	BindProxyCheck(c)
 	return
 }
 
@@ -277,8 +277,8 @@ func BindAsset(c *cli.Context) (err error) {
 	if err == nil {
 		log.Info("Will check after 10 seconds")
 		time.Sleep(10 * time.Second)
+		err = BindAssetCheck(c)
 	}
-	BindAssetCheck(c)
 	return
 }
 
